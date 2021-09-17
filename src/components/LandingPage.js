@@ -39,13 +39,17 @@ handleLogin = (data) => {
     })
   }
 
-handleLogout = () => {
-    //YOU RUN THRU THIS AS SOON AS U LAND
-    this.setState({
-    isLoggedIn: false,
-    user: {}
-    })
-  }
+// handleLogout = () => {
+//     //YOU RUN THRU THIS AS SOON AS U LAND
+//     this.setState({
+//     isLoggedIn: false,
+//     user: {}
+//     })
+//   }
+  
+
+
+
 
 render() {
     return (

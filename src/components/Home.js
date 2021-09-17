@@ -48,16 +48,11 @@ export default class Home extends Component{
           <RenderMyThoughts addNewFolder={this.addNewFolder} user_id={this.props.user_id} userData={this.props.userData} username={this.props.username} myFolders={this.state.addedFolders}/>
           {/* <CreateThought user_id={this.props.user_id} /> */}
           
-
-
-
-
           {/* {this.state.trans === 'nine' ? null : this.state.trans.users.map(user => <RenderUser usernam={this.props.username} tran={user} key={user.id} /> )} */}
           {/* {console.log(this.state.trans)} */}
 
           {/* {this.state.trans === [] ? null : this.state.trans.users.map(tran => <RenderUser tran={tran} /> )} */}
           
-
       </div>
   );
 };

@@ -1,46 +1,128 @@
 
-import React, { Component } from 'react';
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+// import axios from 'axios'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Signup from './SignUp'
 import FirstPage from './FirstPage'
+// import { Redirect, useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
-class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      isLoggedIn: false,
-      user: {}, 
-      page: ''
-     };
+const LandingPage = () => {
+  const [isLoggedIn, updateIsLoggedIn] = useState(false);
+  const [user, updateUser] = useState({});
+  
+  useEffect(() => {
+    loginStatus()
+  }, [user])
+  
+  const loginStatus = async () => {
+    let req = await fetch('http://localhost:3000/logged_in', {credentials: 'include'})
+    let res = await req.json();
+    // debugger
+    if(res.logged_in){
+      handleLogin(res)
+    } 
+    // else {
+    //   handleLogout()
+    //   // .catch(error => console.log('api errors:', error))
+    // }
   }
-componentDidMount() {
-    this.loginStatus()
-  }
-loginStatus = () => {
-    axios.get('http://localhost:3000/logged_in', {withCredentials: true})
-    .then(response => {
-      if (response.data.logged_in) {
-        this.handleLogin(response)
-      } else {
-        this.handleLogout()
-      }
-    })
-    .catch(error => console.log('api errors:', error))
-  }
-handleLogin = (data) => {
-    this.setState({
-      isLoggedIn: true,
-      user: data.user,
-    //   page: "home"
 
-    })
+  const handleLogin = (data) => {
+    updateIsLoggedIn(true)
+    updateUser(data.user)
   }
+
+  const handleLogout = () => {
+    updateIsLoggedIn(false)
+    updateUser({})
+    // Redirect('/login')
+  }
+
+  return(
+    <div>
+    {isLoggedIn === false ? <h1 className={'welcome'}>WELCOME TO YOUR BRAIN</h1> : null }
+    <BrowserRouter>
+      <Switch>
+        <Route 
+          exact path='/' 
+          render={props => (
+          <FirstPage {...props}  handleLogout={handleLogout} loggedInStatus={isLoggedIn}/>
+          )}
+        />
+        <Route 
+          exact path='/login' 
+          render={props => (
+          <Login {...props}  handleLogout={handleLogout} handleLogin={handleLogin} loggedInStatus={isLoggedIn}/>
+          )}
+        />
+        <Route 
+          exact path='/signUp' 
+          render={props => (
+          <Signup {...props}  handleLogin={handleLogin} loggedInStatus={isLoggedIn}/>
+          )}
+        />
+        <Route 
+          exact path='/home' 
+          render={props => (
+          <Home {...props}  handleLogout={handleLogout} loggedInStatus={isLoggedIn}/>
+          )}
+        />
+
+      </Switch>
+    </BrowserRouter>
+  </div>
+
+  )
+
+}
+export default LandingPage
+
+
+
+
+
+
+
+
+
+// class LandingPage extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = { 
+//       isLoggedIn: false,
+//       user: {}, 
+//      };
+//   }
+// componentDidMount() {
+//     this.loginStatus()
+//     //THIS IS TO VERIFY YOURE LOGGED IN BEFORE GETTING ACCESS TO ANY OF THE CONTENT
+//   }
+// loginStatus = () => {
+//     axios.get('http://localhost:3000/logged_in', {withCredentials: true})
+//     .then(response => {
+//       if (response.data.logged_in) {
+//         this.handleLogin(response)
+//       } else {
+//         this.handleLogout()
+//       }
+//     })
+//     .catch(error => console.log('api errors:', error))
+//   }
+// handleLogin = (data) => {
+//   console.log('youre now loggggged in')
+//     this.setState({
+//       isLoggedIn: true,
+//       user: data.user,
+//     //   page: "home"
+
+//     })
+//   }
 
 // handleLogout = () => {
 //     //YOU RUN THRU THIS AS SOON AS U LAND
+//     console.log('youre logged out!')
 //     this.setState({
 //     isLoggedIn: false,
 //     user: {}
@@ -51,47 +133,47 @@ handleLogin = (data) => {
 
 
 
-render() {
-    return (
-      <div>
-        {this.state.isLoggedIn === false ? <h1 className={'welcome'}>WELCOME TO YOUR BRAIN</h1> : null }
-        <BrowserRouter>
-          <Switch>
-            <Route 
-              exact path='/' 
-              render={props => (
-              <FirstPage {...props}  handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
-              )}
-            />
-            <Route 
-              exact path='/login' 
-              render={props => (
-              <Login {...props}  handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
-              )}
-            />
-            <Route 
-              exact path='/signUp' 
-              render={props => (
-              <Signup {...props}  handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
-              )}
-            />
-            <Route 
-              exact path='/home' 
-              render={props => (
-              <Home {...props}  handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
-              )}
-            />
+// render() {
+//     return (
+//       <div>
+//         {this.state.isLoggedIn === false ? <h1 className={'welcome'}>WELCOME TO YOUR BRAIN</h1> : null }
+//         <BrowserRouter>
+//           <Switch>
+//             <Route 
+//               exact path='/' 
+//               render={props => (
+//               <FirstPage {...props}  handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
+//               )}
+//             />
+//             <Route 
+//               exact path='/login' 
+//               render={props => (
+//               <Login {...props}  handleLogout={this.handleLogout} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+//               )}
+//             />
+//             <Route 
+//               exact path='/signUp' 
+//               render={props => (
+//               <Signup {...props}  handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>
+//               )}
+//             />
+//             <Route 
+//               exact path='/home' 
+//               render={props => (
+//               <Home {...props}  handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn}/>
+//               )}
+//             />
     
-          </Switch>
-        </BrowserRouter>
-      </div>
-    );
-  }
-}
-export default LandingPage;
+//           </Switch>
+//         </BrowserRouter>
+//       </div>
+//     );
+//   }
+// }
+// export default LandingPage;
 
 
-
+//////////////////////////////////////////////////////////////////////////
 
 
 

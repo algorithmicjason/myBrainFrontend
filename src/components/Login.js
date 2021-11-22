@@ -74,6 +74,7 @@ render() {
     const {username, password} = this.state
 return (
       <div className={'loginpage'}>
+        { this.state.errors ? this.handleErrors() : null}
         {this.state.page === "Home" ? <Dashboard username={this.state.username} handleLogout={this.props.handleLogout}/> : null }
         {this.state.valid === "false" ?
          <div> 
@@ -105,13 +106,7 @@ return (
           <div className={'column-quote'}>
             <p className={"quote"}>INCREASE YOUR MEMORY BY AS MUCH AS 70 PERCENT WHEN YOU GO THROUGH YOUR NOTES WITHIN 24 HOURS.</p>
           </div>
-
-          <div>
         
-          {
-            this.state.errors ? this.handleErrors() : null
-          }
-        </div> 
         </div> : null }
       </div>
     );

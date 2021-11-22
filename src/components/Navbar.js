@@ -1,3 +1,5 @@
+import { Route } from 'react-router-dom'
+
 const Navbar = (props) => {
     return (
         <nav>
@@ -8,7 +10,11 @@ const Navbar = (props) => {
                 <h4 onClick={props.changeToTheWorldsThoughts}>Worldly Wrinkles</h4>
                 
                 {/* <h4 >Sign out</h4> */}
-                <h4 onClick={props.handleLogout}>Sign out</h4>
+                {/* <h4 onClick={props.handleLogout}>Sign out</h4> */}
+                {/* <Route render({history}) onClick={window.history.push('/')}>Sign out</h4> */}
+                <Route render={({ history}) => (
+                    <h4 onClick={() => history.push('/')}>Logout </h4>)}>
+                </Route>
             </div>
         </nav>
     )

@@ -252,6 +252,14 @@ data-quote {
    font-size: 40px;
    font-weight: bold;
  }
+
+ .SingleWrinklePage {
+   display: block;
+ }
+
+ .display-none {
+   display: none;
+ }
  
 
 

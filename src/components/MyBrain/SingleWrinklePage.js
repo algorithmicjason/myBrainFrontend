@@ -1,16 +1,29 @@
-import { Component } from "react";
+// import { Component } from "react";
+import React, { useState } from "react";
 
 
-export default class SingleWrinklePage extends Component {
+// export default class SingleWrinklePage extends Component {
+    
+    const SingleWrinklePage = (props) => { 
+        // debugger
+        
+        const [display, updateDisplay] = useState("SingleWrinklePage")
 
-    render(){
+    // render(){
+        const updateDisplayFunc = () => {
+            // debugger
+            // e.preventDefault
+            updateDisplay("display-none")
+        }
         
         return(
             <div>
+                
 
-                {this.props.onlyMyFolders.map(folder => folder.thoughts.map(wrinkle => wrinkle.id === +this.props.wrinkleNumber ? 
-                    <div className={"SingleWrinklePage"}>
-                        <button className={"close"} onClick={console.log('trying to close this')}>X</button>
+                {props.onlyMyFolders.map(folder => folder.thoughts.map(wrinkle => wrinkle.id === +props.wrinkleNumber ? 
+                    <div className={display}>
+                        <button className={"close"} onClick={updateDisplayFunc}>X</button>
+                        {/* <button className={display} onClick={console.log("trying to figure it out")}>X</button> */}
                         <h1 className={"SingleWrinklePageTitle"}>{wrinkle.title}</h1>
                         <p className={"SingleWrinklePageDescription"}><b>Wrinkle:</b> {wrinkle.description}</p>
                         <p className={"SingleWrinklePageCreatedAt"}><b>Created At:</b> {wrinkle.created_at.slice(0, 10)}</p>
@@ -18,5 +31,6 @@ export default class SingleWrinklePage extends Component {
                      : null ))}
             </div>
         )
-    }
-}
+    } 
+    export default SingleWrinklePage
+// }

@@ -37,7 +37,7 @@ const LandingPage = () => {
   const handleLogout = () => {
     updateIsLoggedIn(false)
     updateUser({})
-    // Redirect('/login')
+    // window.history.push('/login')
   }
 
   return(

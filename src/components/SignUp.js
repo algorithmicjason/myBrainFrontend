@@ -7,6 +7,7 @@ import Login from './Login';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Signup extends Component {
+
   constructor(props) {
     super(props);
     this.state = { 
@@ -51,8 +52,10 @@ axios.post('http://localhost:3000/users', {user}, {withCredentials: true})
 redirect = () => {
   // <Home />
     // this.setState({changeToHome: true})
-    <Redirect to='./Login' />
-    // this.props.history.push('/')
+    // <Redirect to='./Login' />
+    this.props.history.push('/login')
+    window.alert("Successfully created profile! Please Login 😃")
+    // debugger
   }
 
 handleErrors = () => {
@@ -125,6 +128,7 @@ return (
     );
   }
 }
+
 
 export default Signup;
 

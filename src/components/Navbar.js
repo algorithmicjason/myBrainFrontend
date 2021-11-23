@@ -1,6 +1,13 @@
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 
 const Navbar = (props) => {
+
+    // const [signout, updateSignout] = useState()
+
+    const Signout = () => {
+        window.location.reload(true)
+    }
+
     return (
         <nav>
             <div className="Navbar">
@@ -12,9 +19,11 @@ const Navbar = (props) => {
                 {/* <h4 >Sign out</h4> */}
                 {/* <h4 onClick={props.handleLogout}>Sign out</h4> */}
                 {/* <Route render({history}) onClick={window.history.push('/')}>Sign out</h4> */}
-                <Route render={({ history}) => (
-                    <h4 onClick={() => history.push('/')}>Logout </h4>)}>
-                </Route>
+                {/* <Route render={({ history}) => ( */}
+                    {/* // <h4 onClick={() => history.push('/')}>Logout </h4>)}> */}
+                    {/* )}> */}
+                {/* </Route> */}
+                    <h4 onClick={Signout}>Logout </h4>
             </div>
         </nav>
     )

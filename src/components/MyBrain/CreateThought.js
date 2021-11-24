@@ -25,6 +25,10 @@ handleChangeDropdown = (event) => {
   this.setState({ dropdownThought: event.target.value });
 };
 
+handleChangeDropdownReset = () => {
+  this.setState({ dropdownThought: ""})
+}
+
 handleSubmit = (event) => {
   event.preventDefault()
 
@@ -100,7 +104,7 @@ handleSubmit = (event) => {
               </div> */}
               <p><h3>Folders:</h3> {this.state.dropdownFolder}</p>
 {/* instead of null make the visibility none */}
-                {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} />}
+                {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} handleChangeDropdown={this.handleChangeDropdownReset} />}
                 {/* set this state to "" when x is clicked */}
               <div className={"foldersAndTitlesMyBrain"}>
                 {this.props.onlyMyFolders.reverse().map(folder => 

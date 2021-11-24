@@ -255,11 +255,15 @@ data-quote {
 
  .SingleWrinklePage {
    display: block;
+   z-index: 1;
  }
 
  .display-none {
-   display: none;
+   /* display: none;
+    */
+    z-index: -1;
  }
+ /* things that're left.. forms & folder &file updates when posted */
  
 
 

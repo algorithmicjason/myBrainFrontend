@@ -15,7 +15,7 @@ import React, { useState } from "react";
             // debugger
             // e.preventDefault
             updateDisplay("display-none")
-            updateWrinkleNumber('none')
+            updateWrinkleNumber("")
             // updateDisplay("SingleWrinklePage")
             //you have to clear the current wrinkle
             //props.wrinkleNumber

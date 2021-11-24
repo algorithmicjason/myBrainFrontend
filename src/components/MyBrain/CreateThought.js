@@ -99,9 +99,9 @@ handleSubmit = (event) => {
                     <input value={this.state.searchText} onChange={event => this.setState({searchText: event.target.value})} type="text" className="form-control" id="search-text" placeholder="Search..."/>
               </div> */}
               <p><h3>Folders:</h3> {this.state.dropdownFolder}</p>
-
+{/* instead of null make the visibility none */}
                 {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} />}
-
+                {/* set this state to "" when x is clicked */}
               <div className={"foldersAndTitlesMyBrain"}>
                 {this.props.onlyMyFolders.reverse().map(folder => 
 
@@ -112,7 +112,7 @@ handleSubmit = (event) => {
                     </select>
 
                     {/* {this.setState({dropdownFolder: folder.title})} */}
-                    
+
                     <b>{folder.title}</b> {folder.color === "Blue" ? <img src={'https://iconarchive.com/download/i7950/hopstarter/soft-scraps/Folder-Generic-Blue.ico'} className="folderPic" alt="..." /> 
                     : folder.color === "Red" ? <img src={'https://findicons.com/files/icons/129/soft_scraps/128/folder_generic_red_01.png'} id={"red"} className="folderPic" alt="..." /> 
                     : folder.color === "Green" ? <img src={'https://iconarchive.com/download/i7676/hopstarter/scrap/Folder-Closed-Green.ico'} className="folderPic" alt="..." /> 

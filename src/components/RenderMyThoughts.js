@@ -1,5 +1,5 @@
+//Renders 2 forms
 import { Component } from "react"
-//CURRENTLY JUST RENDERING ALL MY FOLDERS
 import CreateFolder from './MyBrain/CreateFolder'
 import CreateThought from './MyBrain/CreateThought'
 
@@ -32,16 +32,16 @@ export default class RenderMyThoughts extends Component{
     
     render() {
     return (
-        <div className={'RenderAllThoughts greybackground'}>
+        <div className='RenderAllThoughts greybackground'>
 
             
            {/* <CreateFolder user_id={this.props.user_id} onlyMyFolders={this.state.onlyMyFolders} createFolder={this.createFolder} addNewThought={this.addNewThought} addNewFolder={this.addNewFolder} folders={this.state.folders} />  */}
            <CreateFolder user_id={this.props.user_id} onlyMyFolders={this.state.onlyMyFolders} addNewThought={this.addNewThought} addNewFolder={this.addNewFolder} folders={this.state.folders} /> 
-            <div className={"RenderAllThoughts"}>
+            {/* <div className="RenderAllThoughts">
                
                 
             
-            </div>
+            </div> */}
             {<CreateThought onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewThought={this.addNewThought} folders={this.state.folders}  />}
             
         </div>

@@ -36,7 +36,7 @@ export default class WelcomePage extends Component{
       
       <div>
           
-          <h1 className={"welcomePageName"}>Welcome {this.props.username}!</h1>
+          <h1 className="welcomePageName">Welcome {this.props.username}!</h1>
           {this.props.userData === "nine" ? null : this.props.userData.users.map(user => <RenderUser username={this.props.username} user={user} key={user.id} />)}
           {/* PUT THE API HERE */}
           {/* {console.log(this.state.trans)} */}

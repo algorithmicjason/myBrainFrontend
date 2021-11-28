@@ -29,7 +29,7 @@ export default class RenderUser extends Component{
             <div  className="welcomePic" >
                 <img src={this.props.user.image} className="brain" alt="..." />
             </div>
-            <div className={'quoteForWelcome'}>
+            <div className='quoteForWelcome'>
                 {this.state.quote}
             </div>
 

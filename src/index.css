@@ -263,7 +263,20 @@ data-quote {
     */
     z-index: -1;
  }
+
+ .create-folder {
+   display: flex;
+   flex-direction: row;
+   max-width: 40%;
+ }
+
+ .create-thought {
+   display: flex;
+   flex-direction: row;
+   max-width: 40%;
+ }
  /* things that're left.. forms & folder &file updates when posted */
+ /* using arrow funcs onClick doesn't auto invoke */
  
 
 

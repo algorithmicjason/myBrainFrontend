@@ -1,3 +1,5 @@
+// this comes from RenderMyThoughts
+//this folder renders a form to create a thought & renders all folders
 import { Component } from 'react';
 import SingleWrinklePage from './SingleWrinklePage'
 
@@ -61,10 +63,10 @@ handleSubmit = (event) => {
       //debugger
         return(
             <div>
-              <h2 className={"THISISAHEADER"}>CREATE A WRINKLE</h2>
+              <h2 className="THISISAHEADER">CREATE A WRINKLE</h2>
               <form onSubmit={this.handleSubmit} className="newThought">
                 <div className="newThoughtTitle" id={"t"}>
-                    <label htmlFor="title" className={"THISISATITLE"}>Title</label>
+                    <label htmlFor="title" className="THISISATITLE">Title</label>
                     <input onChange={event => this.setState({title: event.target.value})} type="text" className="newThoughtInput" id="newThoughtInput"placeholder="Enter Title"/>   
                 </div>
                 
@@ -76,7 +78,9 @@ handleSubmit = (event) => {
                 <div className="newThought" id={"c"}>
                   <select onChange={this.handleChange} value={this.state.folder_id}> 
                     <option value={""} disabled selected hidden >Choose Folder...</option>
-                      {this.props.onlyMyFolders ? this.props.onlyMyFolders.map(folder => <option value={folder.id} key={folder.id}>{folder.title}</option>)
+                      {/* {this.props.onlyMyFolders ? this.props.onlyMyFolders.map(folder => <option value={folder.id} key={folder.id}>{folder.title}</option>)
+                      : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>} */}
+                      {this.props.onlyMyFolders ? this.props.onlyMyFolders.map(folder => console.log(folder))
                       : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
                   </select>
                 </div>   
@@ -106,10 +110,10 @@ handleSubmit = (event) => {
 {/* instead of null make the visibility none */}
                 {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} handleChangeDropdown={this.handleChangeDropdownReset} />}
                 {/* set this state to "" when x is clicked */}
-              <div className={"foldersAndTitlesMyBrain"}>
+              <div className="foldersAndTitlesMyBrain">
                 {this.props.onlyMyFolders.reverse().map(folder => 
 
-                  <div className={"folderTitle"}>
+                  <div className="folderTitle">
                     <select onChange={this.handleChangeDropdown} value={this.state.testingDropdown}>
                       <option value={""} disabled selected hidden >Choose Wrinkle...</option>
                       {folder.thoughts.map(wrinkle => <option value={wrinkle.id} key={wrinkle.id}>{wrinkle.title}</option> )}

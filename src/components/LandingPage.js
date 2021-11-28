@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 // import axios from 'axios'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+// localhost:3000
+
 import Home from './Home'
 import Login from './Login'
 import Signup from './SignUp'
@@ -42,7 +44,8 @@ const LandingPage = () => {
 
   return(
     <div>
-    {isLoggedIn === false ? <h1 className={'welcome'}>WELCOME TO YOUR BRAIN</h1> : null }
+    {/* {isLoggedIn === false ? <h1 className='welcome'>WELCOME TO YOUR BRAIN</h1> : null } */}
+    {isLoggedIn === false && <h1 className='welcome'>WELCOME TO YOUR BRAIN</h1> }
     <BrowserRouter>
       <Switch>
         <Route 
@@ -52,13 +55,13 @@ const LandingPage = () => {
           )}
         />
         <Route 
-          exact path='/login' 
+          exact path='/Login' 
           render={props => (
           <Login {...props}  handleLogout={handleLogout} handleLogin={handleLogin} loggedInStatus={isLoggedIn}/>
           )}
         />
         <Route 
-          exact path='/signUp' 
+          exact path='/SignUp' 
           render={props => (
           <Signup {...props}  handleLogin={handleLogin} loggedInStatus={isLoggedIn}/>
           )}
@@ -136,7 +139,7 @@ export default LandingPage
 // render() {
 //     return (
 //       <div>
-//         {this.state.isLoggedIn === false ? <h1 className={'welcome'}>WELCOME TO YOUR BRAIN</h1> : null }
+//         {this.state.isLoggedIn === false ? <h1 className='welcome'>WELCOME TO YOUR BRAIN</h1> : null }
 //         <BrowserRouter>
 //           <Switch>
 //             <Route 

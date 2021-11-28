@@ -41,7 +41,7 @@ export default class Home extends Component{
     return (
       
       <div>
-          <h1 className={"bigName"}>{this.props.username}'s <span id={'bb'}>BIG </span>Brain</h1>
+          <h1 className="bigName">{this.props.username}'s <span id={'bb'}>BIG </span>Brain</h1>
           {/* <button onClick={this.setState({show: "folderForm"})}>Create a Folder</button> */}
           {/* <CreateFolder show={this.state.show} user_id={this.props.user_id} addNewFolder={this.addNewFolder} /> */}
       

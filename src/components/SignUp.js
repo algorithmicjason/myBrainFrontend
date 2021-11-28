@@ -71,7 +71,7 @@ handleErrors = () => {
 render() {
     const {username, password, password_confirmation} = this.state
 return (
-      <div className={'signupPage'}>
+      <div className='signupPage'>
         <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           <input
@@ -122,7 +122,7 @@ return (
         <br></br>
         <br></br>
         <br></br>
-        <data-quote className={"signupQuote"}><b>DID YOU KNOW: <br></br></b>"The human brain will triple its size the first year of life. ..."</data-quote>
+        <data-quote className="signupQuote"><b>DID YOU KNOW: <br></br></b>"The human brain will triple its size the first year of life. ..."</data-quote>
       {this.state.changeToHome === false ? null : <Dashboard username={this.state.username} handleLogout={this.props.handleLogout}/>}
       </div>
     );

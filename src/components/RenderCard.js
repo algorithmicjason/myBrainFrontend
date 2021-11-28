@@ -23,7 +23,7 @@ export default class RenderCard extends Component {
             
               <div className="postCard" >
                 <div onClick={console.log(this.props.folder.title)} className="folder" >
-                    <div className={"lil"}>
+                    <div className="lil">
             <p ><b>WRINKLE:</b> <span>{this.props.thought.description}</span></p>
             </div>
                     
@@ -45,7 +45,7 @@ export default class RenderCard extends Component {
                     
                     
                     
-                    <div className={"foldero"}>
+                    <div className="foldero">
                     <p id={'folder'} ><b>FOLDER:</b> {this.props.folder.title}</p>
                     {/* <p>{this.props.folder.date}</p> */}
 

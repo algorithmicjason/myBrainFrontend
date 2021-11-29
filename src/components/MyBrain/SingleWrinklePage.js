@@ -1,4 +1,5 @@
 // import { Component } from "react";
+//this gets imported into CreateThought
 import React, { useState } from "react";
 
 
@@ -18,6 +19,7 @@ import React, { useState } from "react";
             // updateDisplay("display-none")
             // updateWrinkleNumber("")
             props.handleChangeDropdown()
+            // props.handleChangeDropdown()
            
             
             // updateDisplay("SingleWrinklePage")
@@ -31,7 +33,8 @@ import React, { useState } from "react";
                 // {props.onlyMyFolders.map(folder => folder.thoughts.map(wrinkle => wrinkle.id === +props.wrinkleNumber ? 
             // <div className=display>
                     <div className={display}>
-                        <button className="close" onClick={() => updateDisplayFunc(props)}>X</button>
+                        {/* <button className="close" onClick={() => updateDisplayFunc(props)}>X</button> */}
+                        <button className="close" onClick={updateDisplayFunc}>X</button>
                         {/* <button className={display} onClick={console.log("trying to figure it out")}>X</button> */}
                         <h1 className="SingleWrinklePageTitle">{wrinkle.title}</h1>
                         <p className="SingleWrinklePageDescription"><b>Wrinkle:</b> {wrinkle.description}</p>

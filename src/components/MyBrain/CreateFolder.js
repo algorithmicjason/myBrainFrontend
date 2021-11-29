@@ -38,6 +38,7 @@ export default class CreateFolder extends Component {
       color: "Blue", 
     })
   event.target.reset()
+  
 }
 
     render(){

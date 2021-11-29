@@ -25,6 +25,7 @@ export default class RenderMyThoughts extends Component{
     }
     addNewFolder = (newFolder) => {
         this.setState({folders: [...this.state.folders, newFolder] })
+        this.setState({onlyMyFolders: [...this.state.onlyMyFolders, newFolder]})
     }
     findOnlyUrFolders = () => {
         this.state.folders.map(folder => folder.user_id === this.props.user_id ? this.setState({onlyMyFolders: [...this.state.onlyMyFolders, folder]}) : null ) 
@@ -36,13 +37,9 @@ export default class RenderMyThoughts extends Component{
 
             
            {/* <CreateFolder user_id={this.props.user_id} onlyMyFolders={this.state.onlyMyFolders} createFolder={this.createFolder} addNewThought={this.addNewThought} addNewFolder={this.addNewFolder} folders={this.state.folders} />  */}
-           <CreateFolder user_id={this.props.user_id} onlyMyFolders={this.state.onlyMyFolders} addNewThought={this.addNewThought} addNewFolder={this.addNewFolder} folders={this.state.folders} /> 
-            {/* <div className="RenderAllThoughts">
-               
-                
-            
-            </div> */}
-            {<CreateThought onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewThought={this.addNewThought} folders={this.state.folders}  />}
+           <CreateFolder onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewFolder={this.addNewFolder} folders={this.state.folders} /> 
+
+            {<CreateThought onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewThought={this.addNewThought} folders={this.state.folders} myThoughts={this.state.myThoughts} />}
             
         </div>
     )

@@ -50,6 +50,7 @@ handleSubmit = (event) => {
 
 
   fetch(URL, ReqObj).then(r => r.json()).then(newThought => this.props.addNewThought(newThought))
+
   this.setState({
     title: "",
     description: "",
@@ -79,11 +80,8 @@ handleSubmit = (event) => {
                 <div className="newThoughtFolder" id={"c"}>
                   <select onChange={this.handleChange} value={this.state.folder_id}> 
                   {this.props.onlyMyFolders ? <option value={""} disabled selected hidden >Choose Folder...</option> : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
-                  {/* {this.props.myThoughts ? console.log(`YOUYYOYOYOYO ${this.props.onlyMyFolders}`) : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>} */}
-                    
-
-                    {/* below is apart of the form  */}
-                      {this.props.onlyMyFolders ? this.props.onlyMyFolders.reverse().map(folder => <option value={folder.id} key={folder.id}>{folder.title}</option>)
+                      {this.props.onlyMyFolders ? this.props.onlyMyFolders.reverse().map(
+                        folder => <option value={folder.id} key={folder.id}>{folder.title}</option>)
                       : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
                   </select>
                 </div>   
@@ -123,19 +121,19 @@ handleSubmit = (event) => {
 
 
 
-              <p><h2>Folders:</h2> {this.state.dropdownFolder}</p>
+              <h2>Folders:</h2>
 {/* instead of null make the visibility none */}
                 {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} handleChangeDropdown={this.handleChangeDropdownReset} />}
                 {/* set this state to "" when x is clicked */}
               <div className="foldersAndTitlesMyBrain">
-                {this.props.onlyMyFolders.map(folder => 
 
+                {this.props.onlyMyFolders.map(folder => 
                   <div className="folderTitle">
-                    {/* <select onChange={this.handleChangeDropdown}> */}
                     <select onChange={this.handleChangeDropdown}>
-                    
                       <option value={""} disabled selected hidden >Choose Wrinkle...</option>
-                      {folder.thoughts ? folder.thoughts.reverse().map(wrinkle => <option value={wrinkle.id} key={wrinkle.id}>{wrinkle.title}</option> ) : null}
+{/* update folder */}   {folder.thoughts ? folder.thoughts.reverse().map(
+                        wrinkle => <option value={wrinkle.id} key={wrinkle.id}>{wrinkle.title}</option> ) 
+                        : null}
 
                     </select>
                     

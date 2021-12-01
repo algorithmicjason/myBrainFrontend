@@ -26,13 +26,14 @@ code {
   width: 400px;
   height: 110px;
 }
-.foldersAndTitlesMyBrain{
+.folder-grid{
 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
+  
 }
 .foldersAndTitlesMyBrain:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -45,6 +46,11 @@ code {
 
 .RenderAllThoughts:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.folderPic {
+  width: 300px;
+  height: 300px;
 }
 
 
@@ -114,10 +120,18 @@ data-quote {
   text-align: center;
 }
 
+.newFolder {
+  width: 50%;
+}
+
 .newThoughtDescription {
     height:200px;
     font-size:14pt;
   }
+  .newThought {
+    width: 50%
+  }
+
   .newThought > * {
   background-color: pink;
   width: 100%;
@@ -248,7 +262,7 @@ data-quote {
    font-size: 20px;
    font-weight: bold;
  }
- .THISISAHEADER{
+ .create-header {
    font-size: 40px;
    font-weight: bold;
  }
@@ -275,6 +289,18 @@ data-quote {
    flex-direction: row;
    max-width: 40%;
  }
+
+ .create-form {
+   display: grid;
+   width: 50%;
+   color: red;
+   
+ }
+.create {
+ 
+}
+
+
  /* things that're left.. forms & folder &file updates when posted */
  /* using arrow funcs onClick doesn't auto invoke */
  

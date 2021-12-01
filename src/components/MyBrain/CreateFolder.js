@@ -44,9 +44,9 @@ export default class CreateFolder extends Component {
     render(){
       // debugger
         return(
-          <div className="formz">
+          <div className="create-folder-form create-form" >
   
-            <h2 className="THISISAHEADER">CREATE A FOLDER</h2>
+            {/* <h2 className="create-header" >CREATE A FOLDER</h2> */}
             <form onSubmit={this.handleSubmit} className="newFolder">
               <div className="newFolderTitle">
                 <label htmlFor="title" className="THISISATITLE">Title</label>

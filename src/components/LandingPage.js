@@ -45,7 +45,7 @@ const LandingPage = () => {
   return(
     <div>
     {/* {isLoggedIn === false ? <h1 className='welcome'>WELCOME TO YOUR BRAIN</h1> : null } */}
-    {isLoggedIn === false && <h1 className='welcome'>WELCOME TO YOUR BRAIN</h1> }
+    {isLoggedIn === false && <h1 className='welcome'>MY BRAIN</h1> }
     <BrowserRouter>
       <Switch>
         <Route 

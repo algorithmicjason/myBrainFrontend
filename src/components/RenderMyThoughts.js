@@ -22,8 +22,8 @@ export default class RenderMyThoughts extends Component{
 
     addNewThought = (newThought) => {
         // this.setState({myThoughts: [newThought, ...this.state.myThoughts]})
-        this.state.onlyMyFolders.filter(folder => folder.id == newThought.folder_id)[0].thoughts.push(newThought)
         // debugger
+        this.state.onlyMyFolders.filter(folder => folder.id == newThought.folder_id)[0].thoughts.push(newThought)
     }
     addNewFolder = (newFolder) => {
         this.setState({folders: [...this.state.folders, newFolder] })
@@ -35,13 +35,12 @@ export default class RenderMyThoughts extends Component{
     
     render() {
     return (
-        <div className='RenderAllThoughts greybackground'>
+        <div className='RenderAllThoughts greybackground create'>
 
             
            {/* <CreateFolder user_id={this.props.user_id} onlyMyFolders={this.state.onlyMyFolders} createFolder={this.createFolder} addNewThought={this.addNewThought} addNewFolder={this.addNewFolder} folders={this.state.folders} />  */}
-           <CreateFolder onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewFolder={this.addNewFolder} folders={this.state.folders} /> 
-
-            {<CreateThought onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewThought={this.addNewThought} folders={this.state.folders} myThoughts={this.state.myThoughts} />}
+            <CreateFolder onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewFolder={this.addNewFolder} folders={this.state.folders} /> 
+            <CreateThought onlyMyFolders={this.state.onlyMyFolders} user_id={this.props.user_id} addNewThought={this.addNewThought} folders={this.state.folders} myThoughts={this.state.myThoughts} />
             
         </div>
     )

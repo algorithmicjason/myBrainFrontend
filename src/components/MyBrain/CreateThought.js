@@ -65,7 +65,9 @@ handleSubmit = (event) => {
       //debugger
         return(
             <div>
-              <h2 className="THISISAHEADER">CREATE A WRINKLE</h2>
+              {/* CREATE WRINKLE FORM */}
+              <div className="create-wrinkle-form create-form">
+              {/* <h2 className="create-header">CREATE A WRINKLE</h2> */}
               <form onSubmit={this.handleSubmit} className="newThought">
                 <div className="newThoughtTitle" id={"t"}>
                     <label htmlFor="title" className="THISISATITLE">Title</label>
@@ -79,7 +81,7 @@ handleSubmit = (event) => {
 
                 <div className="newThoughtFolder" id={"c"}>
                   <select onChange={this.handleChange} value={this.state.folder_id}> 
-                  {this.props.onlyMyFolders ? <option value={""} disabled selected hidden >Choose Folder...</option> : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
+                  {this.props.onlyMyFolders.length > 0 ? <option value={""} disabled selected hidden >Choose Folder...</option> : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
                       {this.props.onlyMyFolders ? this.props.onlyMyFolders.reverse().map(
                         folder => <option value={folder.id} key={folder.id}>{folder.title}</option>)
                       : <option value={""} disabled selected hidden >CREATE A FOLDER FIRST </option>}
@@ -93,15 +95,16 @@ handleSubmit = (event) => {
                       <label htmlFor="private">Private Thought</label>
                     </div> */}
 
-                      <div>
-                       <select onChange={event => this.setState({public: event.target.value})}>
-                          <option key={`${true}`} value={`${true}`}>Public</option>
-                          <option key={`${false}`} value={`${false}`}>Private</option>
-                        </select>
-                      </div>   
+                <div>
+                  <select onChange={event => this.setState({public: event.target.value})}>
+                    <option key={`${true}`} value={`${true}`}>Public</option>
+                    <option key={`${false}`} value={`${false}`}>Private</option>
+                  </select>
+                </div>   
 
                 <button type="submit" className="createWrinkleButton">Create</button>
               </form>
+              </div>
 
               {/* <div className="form-group">
                     <label htmlFor="search-text">Search:</label>
@@ -125,10 +128,13 @@ handleSubmit = (event) => {
 {/* instead of null make the visibility none */}
                 {this.state.dropdownThought === "" ? null : <SingleWrinklePage onlyMyFolders={this.props.onlyMyFolders} wrinkleNumber={this.state.dropdownThought} handleChangeDropdown={this.handleChangeDropdownReset} />}
                 {/* set this state to "" when x is clicked */}
-              <div className="foldersAndTitlesMyBrain">
-
+              <div className="folder-grid">
+                {console.log(this.props.onlyMyFolders)}
+                {console.log(this.props.myThoughts)}
                 {this.props.onlyMyFolders.map(folder => 
                   <div className="folderTitle">
+
+                   
                     <select onChange={this.handleChangeDropdown}>
                       <option value={""} disabled selected hidden >Choose Wrinkle...</option>
 {/* update folder */}   {folder.thoughts ? folder.thoughts.reverse().map(

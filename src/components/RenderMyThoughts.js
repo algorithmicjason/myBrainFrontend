@@ -23,7 +23,7 @@ export default class RenderMyThoughts extends Component{
     addNewThought = (newThought) => {
         // this.setState({myThoughts: [newThought, ...this.state.myThoughts]})
         // debugger
-        this.state.onlyMyFolders.filter(folder => folder.id == newThought.folder_id)[0].thoughts.push(newThought)
+        this.state.onlyMyFolders.filter(folder => folder.id === newThought.folder_id)[0].thoughts.push(newThought)
     }
     addNewFolder = (newFolder) => {
         this.setState({folders: [...this.state.folders, newFolder] })

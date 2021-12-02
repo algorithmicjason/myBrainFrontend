@@ -7,6 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+form {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  display: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -121,7 +131,7 @@ data-quote {
 }
 
 .newFolder {
-  width: 50%;
+  width: 100%;
 }
 
 .newThoughtDescription {
@@ -258,9 +268,14 @@ data-quote {
 .createWrinkleButton{
   /* background-color: lightgrey; */
 }
- .THISISATITLE{
-   font-size: 20px;
+ .folder-form__title {
+ }
+ .folder-form__color {
+ }
+ .folder-form__components{
+   font-size: 30px;
    font-weight: bold;
+   margin-bottom: 200px;
  }
  .create-header {
    font-size: 40px;
@@ -291,15 +306,23 @@ data-quote {
  }
 
  .create-form {
-   display: grid;
-   width: 50%;
+   display: inline-block;
+   width: 30%;
    color: red;
+
    
  }
 .create {
- 
+ width: 100%;
 }
 
+.folders-headline {
+  font-size: 250%;
+}
+
+.create-folder-form {
+  float: left;
+}
 
  /* things that're left.. forms & folder &file updates when posted */
  /* using arrow funcs onClick doesn't auto invoke */

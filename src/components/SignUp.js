@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {Link, BrowserRouter as Router, Route } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import Home from './Home'
 import Dashboard from './Dashboard';
-import Login from './Login';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+// import Login from './Login';
+// import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Signup extends Component {
 

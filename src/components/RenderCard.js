@@ -22,7 +22,7 @@ export default class RenderCard extends Component {
             {/* {this.props.folder.id === this.props.thought.folder_id ? this.setState({match: this.props.folder}) : null } */}
             
               <div className="postCard" >
-                <div onClick={console.log(this.props.folder.title)} className="folder" >
+                <div onClick={console.log(`this is where im at ${this.props.folder.title}`)} className="folder" >
                     <div className="lil">
             <p ><b>WRINKLE:</b> <span>{this.props.thought.description}</span></p>
             </div>

@@ -72,7 +72,7 @@ export default class CreateThought extends Component {
           <form onSubmit={this.handleSubmit} className="newThought">
             <div className="newThoughtTitle" id={"t"}>
               <label htmlFor="title" className="THISISATITLE">
-                Title
+                
               </label>
               <input
                 onChange={(event) =>
@@ -81,7 +81,7 @@ export default class CreateThought extends Component {
                 type="text"
                 className="newThoughtInput"
                 id="newThoughtInput"
-                placeholder="Enter Title"
+                placeholder="Title:"
               />
             </div>
 
@@ -97,10 +97,10 @@ export default class CreateThought extends Component {
                 }
                 type="textarea"
                 className="newThoughtDescription"
-                id="newThoughtDescription"
-                placeholder="description"
-                rows="1"
-                cols="50"
+                // id="newThoughtDescription"
+                placeholder="Description:"
+                // rows="1"
+                // cols="60"
                 wrap="physical"
               ></textarea>
             </div>
@@ -142,7 +142,7 @@ export default class CreateThought extends Component {
                 onChange={(event) =>
                   this.setState({ public: event.target.value })
                 }
-              >
+              > 
                 <option key={`${true}`} value={`${true}`}>
                   Public
                 </option>
@@ -152,7 +152,7 @@ export default class CreateThought extends Component {
               </select>
             </div>
 
-            <button type="submit" className="createWrinkleButton">
+            <button type="submit" id="createWrinkleButton">
               Create
             </button>
           </form>

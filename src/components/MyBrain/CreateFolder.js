@@ -48,6 +48,7 @@ export default class CreateFolder extends Component {
   
             <h2 className="create-header" >CREATE A FOLDER</h2>
             <form onSubmit={this.handleSubmit} className="newFolder">
+              <div className="create-folder__margin" >
               <div className="newFolderTitle">
                 <label htmlFor="title" className="folder-form__components folder-form__title">Title</label>
                 <input onChange={event => this.setState({title: event.target.value})} type="text" className="form-control" id="newFolderTitle" placeholder="Enter Title"/>    
@@ -68,6 +69,7 @@ export default class CreateFolder extends Component {
               </div>
 
               <button type="submit" id="butt">Create</button>
+              </div>
 
             </form>
               

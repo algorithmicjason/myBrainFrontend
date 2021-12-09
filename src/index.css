@@ -7,8 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+form > *{
+  margin: 20px 0;
+}
 form {
-  margin: 0;
+  /* margin: 70px 0; */
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -135,7 +138,7 @@ data-quote {
 }
 
 .newThoughtDescription {
-    height:200px;
+    height: 100%;
     font-size:14pt;
   }
   .newThought {
@@ -143,9 +146,14 @@ data-quote {
   }
 
   .newThought > * {
-  background-color: pink;
+  /* background-color: pink; */
   width: 100%;
 }
+
+.newThoughtInput {
+  width: 100%;
+}
+
   .newThought button {
   background-color: lightgrey;
   height: 50px;
@@ -154,7 +162,7 @@ data-quote {
  #butt {
   background-color: lightgrey;
   height: 50px;
-  width: 10%;
+  width: 50%;
 }
 .bigName{
   font-size: 70px;
@@ -265,8 +273,12 @@ data-quote {
 #bb{
   color: white;
 }
-.createWrinkleButton{
+.create-folder__margin {
+  margin-bottom: 50px;
+}
+#createWrinkleButton{
   /* background-color: lightgrey; */
+  width: 50%;
 }
  .folder-form__title {
  }
@@ -275,7 +287,8 @@ data-quote {
  .folder-form__components{
    font-size: 30px;
    font-weight: bold;
-   margin-bottom: 200px;
+   margin-bottom: 20px;
+   float: left;
  }
  .create-header {
    font-size: 40px;
@@ -308,9 +321,9 @@ data-quote {
  .create-form {
    display: inline-block;
    width: 30%;
-   color: red;
-
-   
+   color: white;
+   margin: 40px 0;
+   background-color: pink;
  }
 .create {
  width: 100%;
@@ -322,6 +335,12 @@ data-quote {
 
 .create-folder-form {
   float: left;
+  align-items: center;
+
+}
+
+.form-control {
+  width: 50%;
 }
 
  /* things that're left.. forms & folder &file updates when posted */

@@ -50,13 +50,13 @@ export default class CreateFolder extends Component {
             <form onSubmit={this.handleSubmit} className="newFolder">
               <div className="create-folder__margin" >
               <div className="newFolderTitle">
-                <label htmlFor="title" className="folder-form__components folder-form__title">Title</label>
-                <input onChange={event => this.setState({title: event.target.value})} type="text" className="form-control" id="newFolderTitle" placeholder="Enter Title"/>    
+                <label htmlFor="title" className="folder-form__components folder-form__title"></label>
+                <input onChange={event => this.setState({title: event.target.value})} type="text" className="form-control" id="newFolderTitle" placeholder="Title:"/>    
               </div>
                 
               <div className="form-group">
                     
-                <label htmlFor="color" className="folder-form__components folder-form__color">Color</label>
+                <label htmlFor="color" className="folder-form__components folder-form__color"></label>
 
                 <select onChange={event => this.setState({color: event.target.value})}  type="text" className="form-control" id="newFolderColor"> 
                   <option key={"Blue"} value="Blue" > Blue</option>

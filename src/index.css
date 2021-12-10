@@ -162,7 +162,8 @@ data-quote {
  #butt {
   background-color: lightgrey;
   height: 50px;
-  width: 50%;
+  width: 25%;
+
 }
 .bigName{
   font-size: 70px;
@@ -322,7 +323,7 @@ data-quote {
    display: inline-block;
    width: 30%;
    color: white;
-   margin: 40px 0;
+   margin: 20px 5%;
    background-color: pink;
  }
 .create {
@@ -336,7 +337,14 @@ data-quote {
 .create-folder-form {
   float: left;
   align-items: center;
-
+  margin-left: 12%; 
+   /* line-height: 333%; */
+   line-height: 491%;
+}
+.create-folder-form > * {
+  /* margin-bottom: 20%; */
+  margin-bottom: 0%;
+  /* line-height: 300%; */
 }
 
 .form-control {
